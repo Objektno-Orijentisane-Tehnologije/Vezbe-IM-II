@@ -26,6 +26,7 @@ public class Point {
 	}
 	
 	public void setX(int x) {
+		System.out.println(this);
 		this.x = x;
 	}
 	

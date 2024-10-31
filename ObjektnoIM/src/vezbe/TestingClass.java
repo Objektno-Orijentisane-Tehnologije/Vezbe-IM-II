@@ -107,7 +107,8 @@ public class TestingClass {
 //		System.out.println("Vrednost x koordinate p2 je: " + p2.x);
 //		System.out.println("Vrednost x koordinate p1 je: " + p1.x);
 
-//		p1.setX(20);	
+		p1.setX(20);
+		System.out.println(p1);
 		
 //		System.out.println(p1.distance(p2));
 		
