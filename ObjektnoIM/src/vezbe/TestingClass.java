@@ -1,5 +1,6 @@
 package vezbe;
 
+import geometry.Line;
 import geometry.Point;
 
 public class TestingClass {
@@ -111,6 +112,34 @@ public class TestingClass {
 		System.out.println(p1);
 		
 //		System.out.println(p1.distance(p2));
+		
+		/*==============================
+		 * =============================
+		 * 			VEZBE 5
+		 *============================== 
+		 */
+		Line l1 = new Line();
+		
+//		System.out.println(l1.getStartPoint().getX()); //NULL POINTER EXCEPTION
+//   	System.out.println(l1.getEndPoint()); // NULL
+		
+		l1.setStartPoint(p1);
+		l1.setEndPoint(p2);
+		
+		System.out.println(l1.getStartPoint().getX());
+		System.out.println(l1.getEndPoint());
+		
+		Point p3 = new Point(20,10,true);
+		System.out.println(p3.getX());
+		
+		System.out.println(p3);
+		System.out.println(p1);
+		System.out.println(l1);
+		
+		
+		
+		
+		
 		
 		
 		
