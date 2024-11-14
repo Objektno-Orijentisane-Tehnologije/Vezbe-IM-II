@@ -1,7 +1,9 @@
 package vezbe;
 
+import geometry.Circle;
 import geometry.Line;
 import geometry.Point;
+import geometry.Rectangle;
 
 public class TestingClass {
 	public static void main(String[] args) {
@@ -109,7 +111,7 @@ public class TestingClass {
 //		System.out.println("Vrednost x koordinate p1 je: " + p1.x);
 
 		p1.setX(20);
-		System.out.println(p1);
+//		System.out.println(p1);
 		
 //		System.out.println(p1.distance(p2));
 		
@@ -126,19 +128,37 @@ public class TestingClass {
 		l1.setStartPoint(p1);
 		l1.setEndPoint(p2);
 		
-		System.out.println(l1.getStartPoint().getX());
-		System.out.println(l1.getEndPoint());
+//		System.out.println(l1.getStartPoint().getX());
+//		System.out.println(l1.getEndPoint());
 		
 		Point p3 = new Point(20,10,true);
-		System.out.println(p3.getX());
+//		System.out.println(p3.getX());
 		
-		System.out.println(p3);
+//		System.out.println(p3);
+//		System.out.println(p1);
+//		System.out.println(l1);
+		
+		/*==============================
+		 * =============================
+		 * 			VEZBE 6
+		 *============================== 
+		 */
+		Circle c1 = new Circle(new Point(50,50), 20);
+		Rectangle r1 = new Rectangle(new Point(25,25), 40, 40);
+		
 		System.out.println(p1);
 		System.out.println(l1);
+		System.out.println(c1);
+		System.out.println(r1);
 		
+		System.out.println(p1 instanceof Object);
+		Object obj = new Circle();
+		System.out.println(obj instanceof Circle);
 		
-		
-		
+		System.out.println(p1);
+		p2.setX(20);
+		System.out.println(p2);
+		System.out.println(p1.equals(p2));
 		
 		
 		

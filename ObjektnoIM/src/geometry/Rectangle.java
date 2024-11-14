@@ -30,6 +30,29 @@ public class Rectangle {
 		return 2*width + 2*height;
 	}
 	
+	public boolean contains(int x, int y) {
+		return (x >= upperLeft.getX() && x <= upperLeft.getX() + width) &&
+				(y >= upperLeft.getY() && y <= upperLeft.getY() + height);
+	}
+	
+	@Override
+	public String toString() {
+		return "Upper left point: (" + upperLeft.getX() + ", " 
+				+ upperLeft.getY() + "), width = " + width 
+				+ ", height = " + height;  
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+        if(obj instanceof Rectangle) {
+        	Rectangle temp = (Rectangle)obj;
+        	if(area() == temp.area()) {
+        		return true;
+        	}
+        }
+        return false;
+    }
+	
 	public Point getUpperLeft() {
 		return upperLeft;
 	}

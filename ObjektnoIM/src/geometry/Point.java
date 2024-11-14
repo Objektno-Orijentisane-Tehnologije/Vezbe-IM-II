@@ -28,9 +28,24 @@ public class Point extends Object {
 		return distance;
 	}
 	
+	public boolean contains(int x, int y) {
+		return distance(new Point(x,y)) <= 2;
+	}
+	
 	@Override
 	public String toString() {
         return "(" + x + ", " + y + ")"; 
+    }
+	
+	@Override
+	public boolean equals(Object obj) {
+        if(obj instanceof Point) {
+        	Point temp = (Point)obj;
+        	if(x == temp.getX() && y == temp.getY()) {
+        		return true;
+        	}
+        }
+        return false;
     }
 	
 	public int getX() {
@@ -46,7 +61,7 @@ public class Point extends Object {
 	}
 	
 	public void setX(int x) {
-		System.out.println(this);
+//		System.out.println(this);
 		this.x = x;
 	}
 	

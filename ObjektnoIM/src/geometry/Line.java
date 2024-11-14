@@ -24,10 +24,26 @@ public class Line {
 		return startPoint.distance(endPoint);
 	}
 	
+	public boolean contains(int x, int y) {
+		Point click = new Point(x, y);
+		return length() - (startPoint.distance(click) + endPoint.distance(click)) <= 2;
+	}
+	
 	@Override
 	public String toString() {
         return "(" + startPoint.getX() + ", " + startPoint.getY() + ") -->" + 
         		"(" + endPoint.getX() + ", " + endPoint.getY() + ")"; 
+    }
+	
+	@Override
+	public boolean equals(Object obj) {
+        if(obj instanceof Line) {
+        	Line temp = (Line)obj;
+        	if(startPoint.equals(temp.getStartPoint()) && endPoint.equals(temp.getEndPoint())) {
+        		return true;
+        	}
+        }
+        return false;
     }
 	
 	public Point getStartPoint() {

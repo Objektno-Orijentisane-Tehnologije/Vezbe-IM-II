@@ -28,6 +28,27 @@ public class Circle {
 		return 2*radius*Math.PI;
 	}
 	
+	public boolean contains(int x, int y) {
+		return center.distance(new Point(x,y)) <= radius;
+	}
+	
+	@Override
+	public String toString() {
+		return "Center: (" + center.getX() + ", " 
+				+ center.getY() + "), radius = " + radius;  
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+        if(obj instanceof Circle) {
+        	Circle temp = (Circle)obj;
+        	if(radius == temp.radius) {
+        		return true;
+        	}
+        }
+        return false;
+    }
+	
 	public Point getCenter() {
 		return center;
 	}
