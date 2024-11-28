@@ -1,10 +1,9 @@
 package geometry;
 
-public class Circle {
+public class Circle extends Shape {
 
-	private Point center;
-	private int radius;
-	private boolean selected;
+	protected Point center;
+	protected int radius;
 	
 	public Circle() {
 		
@@ -32,6 +31,10 @@ public class Circle {
 		return center.distance(new Point(x,y)) <= radius;
 	}
 	
+	public boolean contains(Point p) {
+		return this.contains(p.getX(), p.getY());
+	}
+	
 	@Override
 	public String toString() {
 		return "Center: (" + center.getX() + ", " 
@@ -57,20 +60,12 @@ public class Circle {
 		return radius;
 	}
 	
-	public boolean isSelected() {
-		return selected;
-	}
-	
 	public void setCenter(Point center) {
 		this.center = center;
 	}
 	
 	public void setRadius(int radius) {
 		this.radius = radius;
-	}
-	
-	public void setSelected(boolean selected) {
-		this.selected = selected;
 	}
 	
 	

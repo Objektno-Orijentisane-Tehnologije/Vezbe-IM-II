@@ -1,11 +1,10 @@
 package geometry;
 
-public class Rectangle {
+public class Rectangle extends Shape {
 
 	private Point upperLeft;
 	private int width;
 	private int height;
-	private boolean selected;
 	
 	public Rectangle() {
 		
@@ -33,6 +32,10 @@ public class Rectangle {
 	public boolean contains(int x, int y) {
 		return (x >= upperLeft.getX() && x <= upperLeft.getX() + width) &&
 				(y >= upperLeft.getY() && y <= upperLeft.getY() + height);
+	}
+	
+	public boolean contains(Point p) {
+		return this.contains(p.getX(), p.getY());
 	}
 	
 	@Override
@@ -65,10 +68,6 @@ public class Rectangle {
 		return height;
 	}
 	
-	public boolean isSelected() {
-		return selected;
-	}
-	
 	public void setUpperLeft(Point upperLeft) {
 		this.upperLeft = upperLeft;
 	}
@@ -80,12 +79,6 @@ public class Rectangle {
 	public void setHeight(int height) {
 		this.height = height;
 	}
-	
-	public void setSelected(boolean selected) {
-		this.selected = selected;
-	}
-	
-	
 	
 	
 	

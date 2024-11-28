@@ -1,10 +1,9 @@
 package geometry;
 
-public class Point extends Object {
+public class Point extends Shape {
 	
 	private int x;
 	private int y;
-	private boolean selected;
 	
 	public Point() {
 		
@@ -56,10 +55,6 @@ public class Point extends Object {
 		return y;
 	}
 	
-	public boolean isSelected() {
-		return selected;
-	}
-	
 	public void setX(int x) {
 //		System.out.println(this);
 		this.x = x;
@@ -68,11 +63,6 @@ public class Point extends Object {
 	public void setY(int y) {
 		this.y = y;
 	}
-	
-	public void setSelected(boolean selected) {
-		this.selected = selected;
-	}
-	
 	
 	
 	

@@ -1,9 +1,11 @@
 package vezbe;
 
 import geometry.Circle;
+import geometry.Donut;
 import geometry.Line;
 import geometry.Point;
 import geometry.Rectangle;
+import geometry.Shape;
 
 public class TestingClass {
 	public static void main(String[] args) {
@@ -159,6 +161,33 @@ public class TestingClass {
 		p2.setX(20);
 		System.out.println(p2);
 		System.out.println(p1.equals(p2));
+		
+		/*==============================
+		 * =============================
+		 * 			VEZBE 7
+		 *============================== 
+		 */
+		Donut d1 = new Donut(new Point(30,30),30,15);
+		System.out.println(d1);
+		System.out.println(d1 instanceof Circle);
+		System.out.println(d1 instanceof Donut);
+		System.out.println(d1 instanceof Object);
+		System.out.println(d1 instanceof Shape);
+		System.out.println(d1.isSelected());
+		
+		Circle c2 = new Donut();
+		Shape s1 = new Donut();
+//		Shape s2 = new Shape(); Nije moguce
+//		Donut d2 = new Circle();
+		
+//		s1.area(); Nije vidljivo putem reference tipa Shape
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		
