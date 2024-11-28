@@ -19,6 +19,26 @@ public class Donut extends Circle {
 	}
 	
 	@Override
+	public double area() {
+		return super.area() - innerRadius*innerRadius*Math.PI;		
+	}
+	
+	@Override
+	public String toString() {
+		return super.toString() + " , innerRadius = " + innerRadius;
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(o instanceof Donut) {
+			Donut temp = (Donut)o;
+			if(radius == temp.radius && innerRadius == temp.innerRadius)
+				return true;
+		}
+		return false;
+	}
+	
+	@Override
 	public boolean contains(int x, int y) {
 		return super.contains(x, y) && this.center.distance(new Point(x,y)) >= innerRadius;
 	}
