@@ -1,5 +1,7 @@
 package geometry;
 
+import java.awt.Graphics;
+
 public class Rectangle extends Shape {
 
 	private Point upperLeft;
@@ -19,6 +21,21 @@ public class Rectangle extends Shape {
 	public Rectangle(Point upperLeft, int width, int height, boolean selected) {
 		this (upperLeft, width, height);
 		this.selected = selected;
+	}
+	
+	@Override
+	public void draw(Graphics g) {
+		g.drawRect(upperLeft.getX(), upperLeft.getY(), width, height);
+	}
+	
+	@Override
+	public void moveTo(int x, int y) {
+		upperLeft.moveTo(x, y);
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		upperLeft.moveBy(byX, byY);
 	}
 	
 	public int area() {
@@ -55,6 +72,15 @@ public class Rectangle extends Shape {
         }
         return false;
     }
+	
+	@Override
+	public int compareTo(Shape o) {
+		if(o instanceof Rectangle) {
+			Rectangle temp = (Rectangle)o;
+			return this.area() - temp.area();
+		}
+		return 0;
+	}
 	
 	public Point getUpperLeft() {
 		return upperLeft;

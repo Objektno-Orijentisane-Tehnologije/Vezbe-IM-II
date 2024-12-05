@@ -1,5 +1,7 @@
 package geometry;
 
+import java.awt.Graphics;
+
 public class Circle extends Shape {
 
 	protected Point center;
@@ -17,6 +19,21 @@ public class Circle extends Shape {
 	public Circle(Point center, int radius, boolean selected) {
 		this (center, radius);
 		this.selected = selected;
+	}
+	
+	@Override
+	public void draw(Graphics g) {
+		g.drawOval(center.getX()-radius, center.getY()-radius, radius*2, radius*2);
+	}
+	
+	@Override
+	public void moveTo(int x, int y) {
+		center.moveTo(x, y);
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		center.moveBy(byX, byY);
 	}
 	
 	public double area() {
@@ -51,6 +68,15 @@ public class Circle extends Shape {
         }
         return false;
     }
+	
+	@Override
+	public int compareTo(Shape o) {
+		if(o instanceof Circle) {
+			Circle temp = (Circle)o;
+			return (int)(this.area() - temp.area());
+		}
+		return 0;
+	}
 	
 	public Point getCenter() {
 		return center;

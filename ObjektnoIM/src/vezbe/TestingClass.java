@@ -3,6 +3,7 @@ package vezbe;
 import geometry.Circle;
 import geometry.Donut;
 import geometry.Line;
+import geometry.Moveable;
 import geometry.Point;
 import geometry.Rectangle;
 import geometry.Shape;
@@ -181,8 +182,14 @@ public class TestingClass {
 //		Donut d2 = new Circle();
 		
 //		s1.area(); Nije vidljivo putem reference tipa Shape
+		/*==============================
+		 * =============================
+		 * 			VEZBE 8
+		 *============================== 
+		 */
 		
-		
+//		Primer poziva ka statickoj konstanti
+//		System.out.println(Moveable.BROJ);
 		
 		
 		
